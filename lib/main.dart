@@ -3,7 +3,7 @@
  * @Author: lidary-byte lidaryl@163.com
  * @Date: 2025-02-19 15:24:29
  * @LastEditors: lidary-byte lidaryl@163.com
- * @LastEditTime: 2025-02-20 15:53:16
+ * @LastEditTime: 2025-02-20 17:17:15
  */
 import 'package:f_read/constant/app_const.dart';
 import 'package:f_read/router/router_config.dart';
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      debugShowCheckedModeBanner: kDebugMode,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
