@@ -3,12 +3,15 @@
  * @Author: lidary-byte lidaryl@163.com
  * @Date: 2025-02-19 15:24:29
  * @LastEditors: lidary-byte lidaryl@163.com
- * @LastEditTime: 2025-02-20 15:27:29
+ * @LastEditTime: 2025-02-20 15:53:16
  */
 import 'package:f_read/constant/app_const.dart';
 import 'package:f_read/router/router_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
+
+final logger = Logger(level: kDebugMode ? Level.all : Level.off);
 
 void main() {
   runApp(const MyApp());
