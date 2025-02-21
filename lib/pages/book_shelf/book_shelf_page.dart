@@ -3,7 +3,7 @@
  * @Author: lidary-byte lidaryl@163.com
  * @Date: 2025-02-20 15:08:10
  * @LastEditors: lidary-byte lidaryl@163.com
- * @LastEditTime: 2025-02-20 17:15:08
+ * @LastEditTime: 2025-02-20 17:22:07
  */
 import 'package:f_read/ext/string_ext.dart';
 import 'package:f_read/pages/book_shelf/book_shelf_store.dart';
@@ -15,7 +15,9 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 class BookShelfPage extends StatelessWidget {
   BookShelfPage({super.key});
 
-  final TextEditingController _urlEdit = TextEditingController();
+  final TextEditingController _urlEdit = TextEditingController(
+    text: 'https://bitbucket.org/xiu2/yuedu/raw/master/shuyuan',
+  );
 
   final _bookShelfStore = BookShelfStore();
 

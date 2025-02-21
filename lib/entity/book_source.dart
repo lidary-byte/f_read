@@ -1,6 +1,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
 import 'package:f_read/constant/app_pattern.dart';
 import 'package:f_read/ext/string_ext.dart';
+import 'package:objectbox/objectbox.dart';
 import 'book_info_rule.dart';
 import 'content_rule.dart';
 import 'explore_rule.dart';
@@ -11,9 +12,13 @@ import 'toc_rule.dart';
 part 'book_source.mapper.dart';
 
 @MappableClass()
+@Entity()
 class BookSource with BookSourceMappable {
+  @Id()
+  int id = 0;
   // 地址，包括 http/https
   // @PrimaryKey()
+  @Index()
   final String bookSourceUrl;
 
   // 名称

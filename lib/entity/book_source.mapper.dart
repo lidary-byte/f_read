@@ -116,6 +116,9 @@ class BookSourceMapper extends ClassMapperBase<BookSource> {
   static ReviewRule? _$ruleReview(BookSource v) => v.ruleReview;
   static const Field<BookSource, ReviewRule> _f$ruleReview =
       Field('ruleReview', _$ruleReview, opt: true);
+  static int _$id(BookSource v) => v.id;
+  static const Field<BookSource, int> _f$id =
+      Field('id', _$id, mode: FieldMode.member);
 
   @override
   final MappableFields<BookSource> fields = const {
@@ -149,6 +152,7 @@ class BookSourceMapper extends ClassMapperBase<BookSource> {
     #ruleToc: _f$ruleToc,
     #ruleContent: _f$ruleContent,
     #ruleReview: _f$ruleReview,
+    #id: _f$id,
   };
 
   static BookSource _instantiate(DecodingData data) {

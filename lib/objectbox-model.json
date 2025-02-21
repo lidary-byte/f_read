@@ -1,0 +1,154 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:582184422267349205",
+      "lastPropertyId": "25:5038319735610167003",
+      "name": "BookSource",
+      "properties": [
+        {
+          "id": "1:4733139263669717427",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:2983222372259417304",
+          "name": "bookSourceUrl",
+          "type": 9,
+          "flags": 2048,
+          "indexId": "1:2916551499677249899"
+        },
+        {
+          "id": "3:6673200409724924938",
+          "name": "bookSourceName",
+          "type": 9
+        },
+        {
+          "id": "4:6266592589535920053",
+          "name": "bookSourceGroup",
+          "type": 9
+        },
+        {
+          "id": "5:283960877644028211",
+          "name": "bookSourceType",
+          "type": 6
+        },
+        {
+          "id": "6:1767844813674542105",
+          "name": "bookUrlPattern",
+          "type": 9
+        },
+        {
+          "id": "7:7533956667854397931",
+          "name": "customOrder",
+          "type": 6
+        },
+        {
+          "id": "8:7310531095245693401",
+          "name": "enabled",
+          "type": 1
+        },
+        {
+          "id": "9:4338094638491341136",
+          "name": "enabledExplore",
+          "type": 1
+        },
+        {
+          "id": "10:876896019473140971",
+          "name": "jsLib",
+          "type": 9
+        },
+        {
+          "id": "11:6367990788222227711",
+          "name": "enabledCookieJar",
+          "type": 1
+        },
+        {
+          "id": "12:5513559096239790450",
+          "name": "concurrentRate",
+          "type": 9
+        },
+        {
+          "id": "13:8646997654547057428",
+          "name": "header",
+          "type": 9
+        },
+        {
+          "id": "14:8132528991198583768",
+          "name": "loginUrl",
+          "type": 9
+        },
+        {
+          "id": "15:1766400142347752173",
+          "name": "loginUi",
+          "type": 9
+        },
+        {
+          "id": "16:9021496903993646398",
+          "name": "loginCheckJs",
+          "type": 9
+        },
+        {
+          "id": "17:4502565130180493096",
+          "name": "coverDecodeJs",
+          "type": 9
+        },
+        {
+          "id": "18:7062756293380543233",
+          "name": "bookSourceComment",
+          "type": 9
+        },
+        {
+          "id": "19:5029971898160614831",
+          "name": "variableComment",
+          "type": 9
+        },
+        {
+          "id": "20:1828261572464326413",
+          "name": "lastUpdateTime",
+          "type": 6
+        },
+        {
+          "id": "21:4269773149807383502",
+          "name": "respondTime",
+          "type": 6
+        },
+        {
+          "id": "22:2752124115165274940",
+          "name": "weight",
+          "type": 6
+        },
+        {
+          "id": "23:8721633627707761547",
+          "name": "exploreUrl",
+          "type": 9
+        },
+        {
+          "id": "24:2724060932976125735",
+          "name": "exploreScreen",
+          "type": 9
+        },
+        {
+          "id": "25:5038319735610167003",
+          "name": "searchUrl",
+          "type": 9
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:582184422267349205",
+  "lastIndexId": "1:2916551499677249899",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}
