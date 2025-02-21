@@ -1,10 +1,3 @@
-/*
- * @Description: 
- * @Author: lidary-byte lidaryl@163.com
- * @Date: 2025-02-20 10:01:15
- * @LastEditors: lidary-byte lidaryl@163.com
- * @LastEditTime: 2025-02-20 14:34:24
- */
 import 'package:flutter/widgets.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 

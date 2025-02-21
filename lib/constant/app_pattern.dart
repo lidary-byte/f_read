@@ -1,10 +1,3 @@
-/*
- * @Description: 
- * @Author: lidary-byte lidaryl@163.com
- * @Date: 2025-02-19 16:21:35
- * @LastEditors: lidary-byte lidaryl@163.com
- * @LastEditTime: 2025-02-19 16:25:53
- */
 class AppPattern {
   static final RegExp JS_PATTERN = RegExp(
     r"<js>([\w\W]*?)</js>|@js:([\w\W]*)",

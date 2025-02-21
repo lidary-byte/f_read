@@ -1,10 +1,3 @@
-/*
- * @Description: 
- * @Author: lidary-byte lidaryl@163.com
- * @Date: 2025-02-20 16:22:45
- * @LastEditors: lidary-byte lidaryl@163.com
- * @LastEditTime: 2025-02-20 17:13:03
- */
 import 'package:f_read/entity/book_source.dart';
 import 'package:f_read/helper/book_source_helper.dart';
 import 'package:flutter/material.dart';

@@ -1,10 +1,3 @@
-/*
- * @Description: 
- * @Author: lidary-byte lidaryl@163.com
- * @Date: 2025-02-19 16:10:22
- * @LastEditors: lidary-byte lidaryl@163.com
- * @LastEditTime: 2025-02-19 17:08:41
- */
 import 'package:dart_mappable/dart_mappable.dart';
 import 'package:f_read/entity/book_list_rule.dart';
 

@@ -1,10 +1,3 @@
-/*
- * @Description: 
- * @Author: lidary-byte lidaryl@163.com
- * @Date: 2025-02-19 16:10:58
- * @LastEditors: lidary-byte lidaryl@163.com
- * @LastEditTime: 2025-02-19 16:59:55
- */
 import 'package:dart_mappable/dart_mappable.dart';
 
 part 'toc_rule.mapper.dart';

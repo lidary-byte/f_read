@@ -1,10 +1,3 @@
-/*
- * @Description:  书源管理
- * @Author: lidary-byte lidaryl@163.com
- * @Date: 2025-02-20 15:08:10
- * @LastEditors: lidary-byte lidaryl@163.com
- * @LastEditTime: 2025-02-20 17:22:07
- */
 import 'package:f_read/ext/string_ext.dart';
 import 'package:f_read/pages/book_shelf/book_shelf_store.dart';
 import 'package:flutter/material.dart';

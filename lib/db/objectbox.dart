@@ -1,10 +1,3 @@
-/*
- * @Description:  db封装
- * @Author: lidary-byte lidaryl@163.com
- * @Date: 2025-02-20 17:28:05
- * @LastEditors: lidary-byte lidaryl@163.com
- * @LastEditTime: 2025-02-20 18:31:46
- */
 import 'package:f_read/objectbox.g.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';

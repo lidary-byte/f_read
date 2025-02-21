@@ -1,10 +1,3 @@
-/*
- * @Description: 
- * @Author: lidary-byte lidaryl@163.com
- * @Date: 2025-02-19 16:11:18
- * @LastEditors: lidary-byte lidaryl@163.com
- * @LastEditTime: 2025-02-19 17:05:17
- */
 import 'package:dart_mappable/dart_mappable.dart';
 part 'review_rule.mapper.dart';
 

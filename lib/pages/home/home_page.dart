@@ -1,10 +1,3 @@
-/*
- * @Description: 
- * @Author: lidary-byte lidaryl@163.com
- * @Date: 2025-02-20 10:26:36
- * @LastEditors: lidary-byte lidaryl@163.com
- * @LastEditTime: 2025-02-20 15:15:51
- */
 import 'package:f_read/pages/home/home_store.dart';
 import 'package:f_read/pages/mine/mine_page.dart';
 import 'package:f_read/widget/home_bottom_navigation.dart';
