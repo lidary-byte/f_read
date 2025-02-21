@@ -1,3 +1,4 @@
+import 'package:f_read/pages/book_shelf/book_shelf_page.dart';
 import 'package:f_read/pages/home/home_store.dart';
 import 'package:f_read/pages/mine/mine_page.dart';
 import 'package:f_read/widget/home_bottom_navigation.dart';
@@ -10,7 +11,7 @@ class HomePage extends StatelessWidget {
 
   // 页面列表
   final List<Widget> _pages = [
-    Center(child: Text('首页', style: TextStyle(fontSize: 24))),
+    BookShelfPage(),
     Center(child: Text('搜索', style: TextStyle(fontSize: 24))),
     Center(child: Text('消息', style: TextStyle(fontSize: 24))),
     MinePage(),
