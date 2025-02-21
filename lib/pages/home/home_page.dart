@@ -21,37 +21,29 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // bottomNavigationBar: HomeBottomNavigation(
-      //   onTap: (int index) {
-      //     _controller.changePage(index);
-      //     _pageController.animateToPage(
-      //       index,
-      //       duration: Duration(milliseconds: 300),
-      //       curve: Curves.ease,
-      //     );
-      //   },
-      // ),
-      body: Column(
-        children: [
-          Expanded(
-            child: PageView(
-              physics: NeverScrollableScrollPhysics(),
-              controller: _pageController,
-              onPageChanged: _controller.changePage,
-              children: _pages,
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: PageView(
+                physics: NeverScrollableScrollPhysics(),
+                controller: _pageController,
+                onPageChanged: _controller.changePage,
+                children: _pages,
+              ),
             ),
-          ),
-          HomeBottomNavigation(
-            onTap: (int index) {
-              _controller.changePage(index);
-              _pageController.animateToPage(
-                index,
-                duration: Duration(milliseconds: 300),
-                curve: Curves.ease,
-              );
-            },
-          ),
-        ],
+            HomeBottomNavigation(
+              onTap: (int index) {
+                _controller.changePage(index);
+                _pageController.animateToPage(
+                  index,
+                  duration: Duration(milliseconds: 300),
+                  curve: Curves.ease,
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

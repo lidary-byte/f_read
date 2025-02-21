@@ -10,19 +10,18 @@ import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
 final logger = Logger(level: kDebugMode ? Level.all : Level.off);
 
 void main() {
-  runApp(MyApp());
+  SystemUiOverlayStyle(
+    statusBarColor: Colors.transparent, // 状态栏背景色
+    statusBarBrightness: Brightness.light, // 状态栏主题
+    statusBarIconBrightness: Brightness.dark, // 状态栏图标主题
+    systemNavigationBarColor: Colors.transparent, // 导航栏背景色
+    systemNavigationBarDividerColor: Colors.transparent, //导航栏线条色
+  );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key}) {
-    SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        systemNavigationBarColor: Colors.transparent,
-        systemNavigationBarDividerColor: Colors.transparent,
-      ),
-    );
-  }
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
