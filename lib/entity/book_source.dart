@@ -40,7 +40,7 @@ class BookSource with BookSourceMappable {
 
   // 是否启用
   // @ColumnInfo(defaultValue: "1")
-  final bool enabled;
+  bool enabled;
 
   // 启用发现
   // @ColumnInfo(defaultValue: "1")

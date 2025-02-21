@@ -1,19 +1,16 @@
+import 'package:f_read/entity/book_source.dart';
 import 'package:f_read/objectbox.g.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
-// import 'package:objectbox/objectbox.dart';
-// import 'objectbox.g.dart';
 
-class Objectbox<T> {
-  late final Store _store;
+class Objectbox {
+  // static late final Store store;
+  static Box<BookSource>? _bookSourceBox;
 
-  late final Box<T> _box;
-
-  Objectbox._create(this._store) {
-    _box = Box<T>(_store);
-  }
-
-  static create() async {
+  static Future<Box<BookSource>> createBookSourceBox() async {
+    if (_bookSourceBox != null) {
+      return _bookSourceBox!;
+    }
     final store = await openStore(
       directory: p.join(
         (await getApplicationDocumentsDirectory()).path,
@@ -21,6 +18,8 @@ class Objectbox<T> {
       ),
       macosApplicationGroup: 'FREAD.app',
     );
-    return Objectbox._create(store);
+    _bookSourceBox = store.box<BookSource>();
+    // return store.box<T>(); // Objectbox._create(store);
+    return _bookSourceBox!;
   }
 }

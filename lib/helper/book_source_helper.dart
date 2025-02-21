@@ -36,6 +36,7 @@ class BookSourceHelper {
       url,
       header: isRequestWithoutUA ? {AppConst.uaName: 'null'} : null,
     );
+
     return List.from(result).map((e) {
       return BookSourceMapper.fromJson(jsonEncode(e));
     }).toList();
