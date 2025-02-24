@@ -1,13 +1,15 @@
 import 'dart:convert';
 
 import 'package:f_read/constant/app_const.dart';
+import 'package:f_read/db/objectbox.dart';
 import 'package:f_read/entity/book_source.dart';
 import 'package:f_read/ext/string_ext.dart';
 import 'package:f_read/http/dio_manager.dart';
 
-class BookSourceHelper {
-  const BookSourceHelper._();
+class BookHelper {
+  const BookHelper._();
 
+  // 导入书源
   static Future<List<BookSource>>? importSource(String text) {
     var source = text.trim();
     if (source.isJsonObject()) {}
@@ -15,7 +17,7 @@ class BookSourceHelper {
     if (source.isJsonArray()) {}
 
     if (source.isAbsUrl()) {
-      return BookSourceHelper._importSourceUrl(source);
+      return BookHelper._importSourceUrl(source);
     }
 
     if (source.isUri()) {}
@@ -40,5 +42,14 @@ class BookSourceHelper {
     return List.from(result).map((e) {
       return BookSourceMapper.fromJson(jsonEncode(e));
     }).toList();
+  }
+
+  /// 查找数据库的书源
+  static queryBookSource() async {
+    final box = await Objectbox.createBookSourceBox();
+    final queryBuild = box.query().build();
+    final localBookSource = queryBuild.find();
+    queryBuild.close();
+    return localBookSource;
   }
 }

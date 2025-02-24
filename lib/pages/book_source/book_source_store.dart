@@ -1,6 +1,6 @@
 import 'package:f_read/db/objectbox.dart';
 import 'package:f_read/entity/book_source.dart';
-import 'package:f_read/helper/book_source_helper.dart';
+import 'package:f_read/helper/book_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
@@ -18,12 +18,6 @@ abstract class _BookSourceStore with Store {
 
   _BookSourceStore() {
     querySqlBookSource();
-    // Objectbox.createBookSourceBox().then((box) {
-    //   // final box = await Objectbox.createBookSourceBox();
-    //   final queryBuild = box.query().build();
-    //   localBookSource = queryBuild.find();
-    //   queryBuild.close();
-    // });
   }
 
   @action
@@ -39,7 +33,7 @@ abstract class _BookSourceStore with Store {
     // } catch (e) {
     //   TDToast.showFail('加载失败', context: context);
     // }
-    return bookSource = (await BookSourceHelper.importSource(url)) ?? [];
+    return bookSource = (await BookHelper.importSource(url)) ?? [];
   }
 
   insertBookSouce() async {
@@ -52,9 +46,6 @@ abstract class _BookSourceStore with Store {
   // 获取本地已保存的书源
   @action
   querySqlBookSource() async {
-    final box = await Objectbox.createBookSourceBox();
-    final queryBuild = box.query().build();
-    localBookSource = queryBuild.find();
-    queryBuild.close();
+    localBookSource = await BookHelper.queryBookSource();
   }
 }
