@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:f_read/main.dart';
+import 'package:f_read/utils/js_util.dart';
 
 class BaseSource {
   String? concurrentRate;
@@ -134,8 +135,6 @@ class BaseSource {
 
   // 执行JS
   Future<dynamic> evalJS(String jsStr) async {
-    // 使用 JS 引擎，例如 `js` 或 `flutter_js` 插件来执行 JS 代码
-    var jsEngine = await JsEngine.create();
-    return jsEngine.eval(jsStr);
+    return JsUtil.evaluate(jsStr);
   }
 }

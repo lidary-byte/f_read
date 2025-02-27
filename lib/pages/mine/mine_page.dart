@@ -1,5 +1,8 @@
+import 'package:f_read/main.dart';
 import 'package:f_read/router/router_path.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_js/flutter_js.dart';
+import 'package:flutter_js/quickjs/qjs_typedefs.dart';
 import 'package:get/get.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
@@ -32,7 +35,17 @@ class _MinePageState extends State<MinePage>
                 Get.toNamed(RoutePath.bookSource);
               },
             ),
-            TDCell(arrow: true, title: 'TXT目录规则', description: '配置TXT目录规则'),
+            TDCell(
+              arrow: true,
+              title: 'TXT目录规则',
+              description: '配置TXT目录规则',
+              onClick: (_) {
+                JsEvalResult jsResult = getJavascriptRuntime(
+                  forceJavascriptCoreOnAndroid: true,
+                ).evaluate("1+1");
+                logger.e(jsResult);
+              },
+            ),
             TDCell(arrow: true, title: '替换净化', description: '配置替换净化规则'),
             TDCell(
               arrow: true,
