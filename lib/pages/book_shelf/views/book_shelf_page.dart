@@ -1,10 +1,10 @@
 import 'package:f_read/router/router_path.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 /// 书架
-class BookShelfPage extends StatelessWidget {
+class BookShelfPage extends GetView<BookShelfPage> {
   const BookShelfPage({super.key});
 
   @override
@@ -17,7 +17,8 @@ class BookShelfPage extends StatelessWidget {
           TDNavBarItem(
             icon: Icons.search,
             action: () {
-              context.push(RoutePath.search);
+              Get.toNamed(RoutePath.bookSearch);
+              // context.push(RoutePath.search);
             },
           ),
         ],

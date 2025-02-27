@@ -1,27 +1,24 @@
 import 'package:f_read/db/objectbox.dart';
 import 'package:f_read/entity/book_source.dart';
 import 'package:f_read/helper/book_helper.dart';
-import 'package:flutter/material.dart';
-import 'package:mobx/mobx.dart';
+import 'package:f_read/helper/db_helper.dart';
+import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
-part 'book_source_store.g.dart';
-
-class BookSourceStore = _BookSourceStore with _$BookSourceStore;
-
-abstract class _BookSourceStore with Store {
+class BookSourceController extends GetxController {
   // 本地已保存的书源
-  @observable
+  // @observable
   List<BookSource> localBookSource = [];
 
-  @observable
+  // @observable
   List<BookSource> bookSource = [];
 
-  _BookSourceStore() {
+  @override
+  onInit() {
+    super.onInit();
     querySqlBookSource();
   }
 
-  @action
-  parseUrl(String url, BuildContext context) async {
+  parseUrl(String url) async {
     // TDToast.showLoading(context: context);
     // try {
     //   bookSource = (await BookSourceHelper.importSource(url)) ?? [];
@@ -44,8 +41,9 @@ abstract class _BookSourceStore with Store {
   }
 
   // 获取本地已保存的书源
-  @action
+  // @action
   querySqlBookSource() async {
-    localBookSource = await BookHelper.queryBookSource();
+    localBookSource = await DbHelper.queryBookSource();
+    update();
   }
 }

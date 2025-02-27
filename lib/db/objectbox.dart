@@ -6,7 +6,6 @@ import 'package:path_provider/path_provider.dart';
 class Objectbox {
   // static late final Store store;
   static Box<BookSource>? _bookSourceBox;
-
   static Future<Box<BookSource>> createBookSourceBox() async {
     if (_bookSourceBox != null) {
       return _bookSourceBox!;
@@ -19,7 +18,6 @@ class Objectbox {
       macosApplicationGroup: 'FREAD.app',
     );
     _bookSourceBox = store.box<BookSource>();
-    // return store.box<T>(); // Objectbox._create(store);
     return _bookSourceBox!;
   }
 }

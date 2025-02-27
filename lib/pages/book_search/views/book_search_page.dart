@@ -1,9 +1,11 @@
 import 'package:f_read/main.dart';
+import 'package:f_read/pages/book_search/controllers/book_search_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
-class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
+class BookSearchPage extends GetView<BookSearchController> {
+  const BookSearchPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +22,7 @@ class SearchPage extends StatelessWidget {
                 placeHolder: '书籍搜索',
                 mediumStyle: true,
                 style: TDSearchStyle.round,
-                onSubmitted: (value) {
-                  logger.e(value);
-                },
+                onSubmitted: controller.search,
               ),
             ),
 

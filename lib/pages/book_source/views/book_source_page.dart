@@ -1,18 +1,16 @@
 import 'package:f_read/ext/string_ext.dart';
-import 'package:f_read/pages/book_source/book_source_store.dart';
+import 'package:f_read/pages/book_source/controllers/book_source_controller.dart';
+import 'package:f_read/pages/book_source/views/widget/item_book_source.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:get/get.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
 
-import '../book_source/ui/item_book_source.dart';
-
-class BookSourcePage extends StatelessWidget {
+class BookSourcePage extends GetView<BookSourceController> {
   BookSourcePage({super.key});
 
   final TextEditingController _urlEdit = TextEditingController();
 
-  final _bookSourceStore = BookSourceStore();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,10 +52,7 @@ class BookSourcePage extends StatelessWidget {
                               // Navigator.pop(context);
                               TDToast.showLoading(context: context);
                               try {
-                                await _bookSourceStore.parseUrl(
-                                  _urlEdit.text,
-                                  context,
-                                );
+                                await controller.parseUrl(_urlEdit.text);
                                 if (!context.mounted) {
                                   return;
                                 }
@@ -96,7 +91,7 @@ class BookSourcePage extends StatelessWidget {
                           child: InkResponse(
                             child: Text('导入'),
                             onTap: () async {
-                              _bookSourceStore.insertBookSouce();
+                              controller.insertBookSouce();
                               Navigator.pop(context);
                             },
                           ),
@@ -104,19 +99,17 @@ class BookSourcePage extends StatelessWidget {
                         mainContentSliversBuilder:
                             (context) => [
                               SliverList.builder(
-                                itemCount: _bookSourceStore.bookSource.length,
+                                itemCount: controller.bookSource.length,
                                 itemBuilder:
                                     (BuildContext context, int index) =>
                                         ItemBookSource(
                                           bookSource:
-                                              _bookSourceStore
-                                                  .bookSource[index],
+                                              controller.bookSource[index],
                                           index: index,
                                         ),
                               ),
                               // Other sliver widgets...
                             ],
-                        // Additional page elements like pageTitle, topBarTitle, etc.
                       ),
                     ],
               );
@@ -124,15 +117,15 @@ class BookSourcePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Observer(
+      body: GetBuilder<BookSourceController>(
         builder:
             (_) => ListView.builder(
               itemBuilder:
                   (context, index) => ItemBookSource(
-                    bookSource: _bookSourceStore.localBookSource[index],
+                    bookSource: controller.localBookSource[index],
                     index: index,
                   ),
-              itemCount: _bookSourceStore.localBookSource.length,
+              itemCount: controller.localBookSource.length,
             ),
       ),
     );

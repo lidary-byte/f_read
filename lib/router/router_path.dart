@@ -3,5 +3,5 @@ class RoutePath {
   static const String home = '/';
   static const String bookSource = '/bookSource';
   static const String bookShelf = '/bookShelf';
-  static const String search = '/search';
+  static const String bookSearch = '/book_search';
 }

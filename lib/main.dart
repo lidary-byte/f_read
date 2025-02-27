@@ -1,8 +1,10 @@
 import 'package:f_read/constant/app_const.dart';
-import 'package:f_read/router/router_config.dart';
+import 'package:f_read/router/app_pages.dart';
+import 'package:f_read/router/router_path.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:logger/logger.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
@@ -25,9 +27,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: routerConfig,
+    return GetMaterialApp(
       title: AppConst.appTag,
+      getPages: appPages,
+      initialRoute: RoutePath.home,
       theme: ThemeData(
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         colorScheme: ColorScheme.light(
@@ -44,7 +47,6 @@ class MyApp extends StatelessWidget {
         ],
         useMaterial3: false,
       ),
-      debugShowCheckedModeBanner: false,
     );
   }
 }

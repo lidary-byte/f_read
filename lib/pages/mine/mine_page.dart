@@ -1,6 +1,6 @@
 import 'package:f_read/router/router_path.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 class MinePage extends StatefulWidget {
@@ -28,7 +28,8 @@ class _MinePageState extends State<MinePage>
               description: '新建、导入、编辑或管理书源',
               leftIcon: TDIcons.book,
               onClick: (_) {
-                context.push(RoutePath.bookSource);
+                // context.push(RoutePath.bookSource);
+                Get.toNamed(RoutePath.bookSource);
               },
             ),
             TDCell(arrow: true, title: 'TXT目录规则', description: '配置TXT目录规则'),

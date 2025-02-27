@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:f_read/constant/app_const.dart';
-import 'package:f_read/db/objectbox.dart';
+import 'package:f_read/entity/analyze_rule/rule_data.dart';
 import 'package:f_read/entity/book_source.dart';
 import 'package:f_read/ext/string_ext.dart';
 import 'package:f_read/http/dio_manager.dart';
@@ -44,12 +44,21 @@ class BookHelper {
     }).toList();
   }
 
-  /// 查找数据库的书源
-  static queryBookSource() async {
-    final box = await Objectbox.createBookSourceBox();
-    final queryBuild = box.query().build();
-    final localBookSource = queryBuild.find();
-    queryBuild.close();
-    return localBookSource;
+  static searchBook(BookSource bookSource, String keyword, {int page = 0}) {
+    final searchUrl = bookSource.bookSourceUrl;
+    if (searchUrl.isNullOrBlank()) {
+      throw Exception('搜索url为空');
+    }
+    final rulaData = RuleData();
+    // final analyzeUrl = AnalyzeUrl(
+    //       mUrl = searchUrl,
+    //       key = key,
+    //       page = page,
+    //       baseUrl = bookSource.bookSourceUrl,
+    //       headerMapF = bookSource.getHeaderMap(true),
+    //       source = bookSource,
+    //       ruleData = ruleData,
+    //       coroutineContext = coroutineContext
+    //   )
   }
 }
