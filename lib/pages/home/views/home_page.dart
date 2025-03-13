@@ -23,32 +23,32 @@ class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: GetBuilder<HomeController>(
-          builder:
-              (_) => Column(
-                children: [
-                  Expanded(
-                    child: PageView(
-                      physics: NeverScrollableScrollPhysics(),
-                      controller: _pageController,
-                      onPageChanged: controller.changePage,
-                      children: _pages,
-                    ),
+      // extendBody: true,
+      // extendBodyBehindAppBar: true,
+      body: GetBuilder<HomeController>(
+        builder:
+            (_) => Column(
+              children: [
+                Expanded(
+                  child: PageView(
+                    physics: NeverScrollableScrollPhysics(),
+                    controller: _pageController,
+                    onPageChanged: controller.changePage,
+                    children: _pages,
                   ),
-                  HomeBottomNavigation(
-                    onTap: (int index) {
-                      controller.changePage(index);
-                      _pageController.animateToPage(
-                        index,
-                        duration: Duration(milliseconds: 300),
-                        curve: Curves.ease,
-                      );
-                    },
-                  ),
-                ],
-              ),
-        ),
+                ),
+              ],
+            ),
+      ),
+      bottomNavigationBar: HomeBottomNavigation(
+        onTap: (int index) {
+          controller.changePage(index);
+          _pageController.animateToPage(
+            index,
+            duration: Duration(milliseconds: 300),
+            curve: Curves.ease,
+          );
+        },
       ),
     );
   }
